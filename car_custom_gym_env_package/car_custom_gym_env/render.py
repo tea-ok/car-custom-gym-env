@@ -1,4 +1,5 @@
 # This file contains the code for rendering the environment for training purposes
+# The code is mostly the work of a previous student, but I have made minor changes to it
 
 import numpy as np
 import math
@@ -61,7 +62,7 @@ def draw_car():
     l4.draw(paper)
     l6.draw(paper)
 
-def get_obs():
+def get_obs(): # Get sensor readings
     global x2, y2, angle, myImage
 
     obs=np.array([0, 0, 0])
@@ -103,7 +104,7 @@ def get_obs():
 
     return obs
 
-def center_car():
+def center_car(): # Center car if it goes outside the screen
     global x2, y2
 
     if x2<0:
@@ -115,7 +116,7 @@ def center_car():
     if y2>800:       
         y2=0
 
-def turn_left(): # vasemmalle
+def turn_left():
     global angle, x2, y2
     
     length=50
@@ -167,7 +168,7 @@ def turn_left(): # vasemmalle
     elif angle>360:
         angle=angle-360
     
-def turn_right(): #oikealle
+def turn_right():
     global angle, x2, y2
     
     length=50
@@ -219,10 +220,10 @@ def turn_right(): #oikealle
     elif angle>360:
         angle=angle-360
 
-def move_forward(): #suoraan Direct (Both motor on)
+def move_forward():
     global angle, x2, y2
     
-    length=50 / 5# muuta?
+    length=50 / 5
     length2=50/4
     length3=50*2
     
