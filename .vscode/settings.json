@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./car_custom_gym_env_package"
+    ]
+}
