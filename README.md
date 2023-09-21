@@ -23,5 +23,4 @@ from car_custom_gym_env.train_env import *
 ```
 And leave the other two imports commented out.
 
-
 **Note: If using the examples, please ensure that you are running them from the `car_custom_gym_environment` folder. Do not navigate to the examples folder and `python train.py` from there. Run `python ./examples/train.py` from the `car_custom_gym_environment` folder in stead. If using a code editor such as VS Code, simply check the terminal to see where the Python interpreter is running the code from if you see any `module not found` errors.**

@@ -13,7 +13,7 @@ random_action = False #if True, the agent will take actions randomly
 render_sim = True #if True, a graphic is generated
 
 env = gym.make('car-env-custom-v1', render_sim=render_sim, n_steps=1000)
-model = PPO.load("./testing_tensorboard_DQN.zip")
+model = PPO.load("./testing_tensorboard.zip")
 model.set_env(env)
 
 random_seed = int(time.time())

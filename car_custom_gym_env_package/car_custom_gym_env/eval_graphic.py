@@ -172,7 +172,7 @@ def draw_car():
     l4.draw(paper)
     l6.draw(paper)
 
-def turn_left(): # vasemmalle Left
+def turn_left():
     global angle, x2, y2
     
     length=50
@@ -223,10 +223,8 @@ def turn_left(): # vasemmalle Left
         angle=360+angle
     elif angle>360:
         angle=angle-360
-
-    # print("left")
     
-def turn_right(): #oikealle  Right
+def turn_right():
     global angle, x2, y2
     
     length=50
@@ -278,10 +276,10 @@ def turn_right(): #oikealle  Right
     elif angle>360:
         angle=angle-360
     
-def move_forward(): #suoraan Direct (Both motors on)
+def move_forward():
     global angle, x2, y2
     
-    length=50 / 5# muuta?
+    length=50 / 5
     length2=50/4
     length3=50*2
     
@@ -290,5 +288,3 @@ def move_forward(): #suoraan Direct (Both motors on)
     
     x2=x2 - length*rad
     y2=y2 + length*rad2
-
-    # print("straight")
