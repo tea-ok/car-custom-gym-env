@@ -1,1 +1,4 @@
 __pycache__/
+tensorboard/
+testing_tensorboard_DQN.zip
+testing_tensorboard.zip

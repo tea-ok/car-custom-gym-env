@@ -40,27 +40,20 @@ class CarEnv(gym.Env):
 
     def __init__(self, render_sim=False, n_steps=1000):
         self.render_sim = render_sim
-
         self.max_time_steps = n_steps
-      
         self.done = False
+        self.current_time_step = 0
 
-        #Definitions of the action and observation space
-        self.min_action = np.array([-1], dtype=np.float32)
-        self.max_action = np.array([1], dtype=np.float32)
-        self.action_space = spaces.Box(low=self.min_action, high=self.max_action, dtype=np.float32)
-
-        self.min_observation = np.array([0, 0, 0,], dtype=np.float32) # Changed from [-1, -1, -1]
-        self.max_observation = np.array([1, 1, 1,], dtype=np.float32)
-        self.observation_space = spaces.Box(low=self.min_observation, high=self.max_observation, dtype=np.float32)
+        self.action_space = spaces.Discrete(3)
+        self.observation_space = spaces.MultiBinary(3)
     
-    def step(self, a3):
+    def step(self, action):
         if keyboard.is_pressed('q'):
                 sys.exit("Closed by user")
 
-        if(a3[0]<-0.3):
+        if action == 0:
             turn_left()
-        elif(a3[0]>0.3):
+        elif action == 1:
             turn_right()
         else:
             move_forward()
@@ -75,10 +68,6 @@ class CarEnv(gym.Env):
         rad=math.sin(math.radians(angle))
         
         draw_car()
-
-        # overlapping = False
-        # overlapping2 = False
-        # overlapping3 = False
 
         x3=int(x2 + length2*rad2 - length3*rad)
         y3=int(y2 + length2*rad + length3*rad2)
@@ -116,7 +105,7 @@ class CarEnv(gym.Env):
             reward += 200
         if obs[1] == 1:
             reward += 1300
-            if obs[0] != 0 and obs[2] != 0:
+            if obs[0] == 0 and obs[2] == 0:
                 reward += 800
         if obs[2] == 1:
             reward += 200
@@ -129,6 +118,10 @@ class CarEnv(gym.Env):
             y2=800
         if y2>800:       
             y2=0
+
+        self.current_time_step += 1
+        if self.current_time_step == self.max_time_steps:
+            self.done = True        
 
         return obs, reward, self.done, {}
 
