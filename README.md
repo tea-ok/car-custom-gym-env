@@ -50,4 +50,8 @@ from car_custom_gym_env.train_env import *
 ```python
 from car_custom_gym_env.eval_graphic import *
 ```
-Next, run the [eval.py](./examples/eval.py) file by pressing the play button of that file in the top right corner of VS Code. You should see the car driving around in the environment, this time it is using the model that was trained earlier.
+Next, run the [eval.py](./examples/eval.py) file by pressing the play button of that file in the top right corner of VS Code. You should see the car driving around in the environment, this time it is using the model that was trained earlier. Ensure that it's loading the correct model by checking the following line in the [eval.py](./examples/eval.py) file:
+    
+```python
+model = PPO.load("./model_name.zip")
+```
