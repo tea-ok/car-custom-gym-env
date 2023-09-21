@@ -6,11 +6,10 @@ This is a custom OpenAI gym environment designed for the Future IoT course at Jy
 
 To install this environment, clone the repository and do the following:
 
-1. Navigate to the `car_custom_gym_environment` folder with Anaconda Promt (Windows) or Terminal (MacOS/Linux)
+1. Navigate to the root folder with Anaconda Promt (Windows) or Terminal (MacOS/Linux) - this is the folder that contains the `requirements.txt` file.
 2. Create a new conda environment with `conda create --name <env_name> python=3.9.2`
 3. Activate the environment with `conda activate <env_name>`
 4. Install the required packages with `pip install -r requirements.txt`
-
 
 ## Usage
 
@@ -23,4 +22,4 @@ from car_custom_gym_env.train_env import *
 ```
 And leave the other two imports commented out.
 
-**Note: If using the examples, please ensure that you are running them from the `car_custom_gym_environment` folder. Do not navigate to the examples folder and `python train.py` from there. Run `python ./examples/train.py` from the `car_custom_gym_environment` folder in stead. If using a code editor such as VS Code, simply check the terminal to see where the Python interpreter is running the code from if you see any `module not found` errors.**
+**Note: If using the examples, please ensure that you are running them from the root folder. Do not navigate to the examples folder and run `python train.py` from there. Run `python ./examples/train.py` from theroot folder in stead. If using a code editor such as VS Code, simply check the terminal to see where the Python interpreter is running the code from if you see any `module not found` errors.**

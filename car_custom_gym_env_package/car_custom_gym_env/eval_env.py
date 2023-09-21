@@ -79,26 +79,26 @@ class CarEnv(gym.Env):
         return obs
 
     def close(self):
-        print("Heippa!")
+        print("Closed")
 
-def turn_left(): # vasemmalle Left
+def turn_left():
     gpio.output(26, 1)
     sleep(0.5)
     gpio.output(26, 0) # = min 10 astetta (arvio)
-    print("vas")
+    print("left")
     
-def turn_right(): #oikealle  Right
+def turn_right():
     
     gpio.output(19, 1)
     sleep(0.5)
-    gpio.output(19, 0) # = plus 10 astetta (arvio)
-    print("oik")
+    gpio.output(19, 0) # about +10 degrees (estimate)
+    print("right")
     
-def move_forward(): #suoraan Direct (Both motors on)
+def move_forward():
     gpio.output(26, 1)
     gpio.output(19, 1)
     sleep(0.5)
     gpio.output(26, 0)
     gpio.output(19, 0)
     
-    print("suor")
+    print("forward")
