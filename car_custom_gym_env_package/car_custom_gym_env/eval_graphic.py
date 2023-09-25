@@ -34,7 +34,7 @@ myImage.draw(paper)
 
 class CarEnv(gym.Env):
     """
-    render_sim: (bool) if true, a graphic is generated
+    render_sim: (bool) Unimplemented - simulation is always rendered
     n_steps: (int) number of time steps
     """
 

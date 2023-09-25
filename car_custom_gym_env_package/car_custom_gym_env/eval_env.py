@@ -19,7 +19,7 @@ gpio.setup(21, gpio.IN)
 
 class CarEnv(gym.Env):
     """
-    render_sim: (bool) if true, a graphic is generated
+    render_sim: (bool) Unimplemented - no simulation for this environment
     n_steps: (int) number of time steps
     """
 
@@ -67,7 +67,7 @@ class CarEnv(gym.Env):
         return obs, reward, self.done, {}
 
     def render(self, mode='human', close=False):        
-        print("Pois päältä...")
+        print("Rendering...")
         
     def reset(self):
         obs=np.array([0, 0, 0])
@@ -84,7 +84,7 @@ class CarEnv(gym.Env):
 def turn_left():
     gpio.output(26, 1)
     sleep(0.5)
-    gpio.output(26, 0) # = min 10 astetta (arvio)
+    gpio.output(26, 0) # = about -10 degrees (estimate)
     print("left")
     
 def turn_right():

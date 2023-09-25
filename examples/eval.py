@@ -8,9 +8,9 @@ import os
 sys.path.insert(0, './car_custom_gym_env_package') # train.py + eval.py
 import car_custom_gym_env
 
-continuous_mode = True #if True, after completing one episode the next one will start automatically
-random_action = False #if True, the agent will take actions randomly
-render_sim = True #if True, a graphic is generated
+continuous_mode = True # If True, after completing one episode the next one will start automatically
+random_action = False # If True, the agent will take actions randomly
+render_sim = True # If True, a graphic is generated
 
 env = gym.make('car-env-custom-v1', render_sim=render_sim, n_steps=1000)
 model = PPO.load("./model_name.zip")
@@ -37,7 +37,6 @@ try:
         obs, reward, done, info = env.step(action)
 
         if done is True:
-            print("done")
             if continuous_mode is True:
                 state = env.reset()
             else:

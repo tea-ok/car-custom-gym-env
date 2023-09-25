@@ -11,7 +11,7 @@ from render import *
 
 class CarEnv(gym.Env):
     """
-    render_sim: (bool) if true, a graphic is generated
+    render_sim: (bool) Unimplemented - simulation is always rendered
     n_steps: (int) number of time steps
     """
 
@@ -59,7 +59,7 @@ class CarEnv(gym.Env):
         return obs, reward, self.done, {}
 
     def render(self, mode='human', close=False):        
-        # print("Pois päältä...")
+        # Rendering is done in the step function
         pass
         
     def reset(self):
@@ -67,5 +67,5 @@ class CarEnv(gym.Env):
         return obs
 
     def close(self):
-        # print("Heippa!")
+        # Closing is done in the step function
         pass

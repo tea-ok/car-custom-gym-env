@@ -8,8 +8,7 @@ import car_custom_gym_env
 
 env = gym.make('car-env-custom-v1', render_sim=False, n_steps=1000)
 
-# If you want to include Tensorboard logging, uncomment the first line and comment out the second one
-#model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./tensorboard/")
+# For Tensorboard logging, add a tensorboard_log argument to the PPO() method
 model = PPO("MlpPolicy", env, verbose=1)
 
 model.learn(total_timesteps=600000)
