@@ -57,6 +57,7 @@ Next, run the [eval.py](./examples/eval.py) file by pressing the play button of 
 ```python
 model = PPO.load("./model_name.zip")
 ```
+6. When testing it on the Raspberry Pi, you can simply copy the model's .zip file to the Raspberry Pi and run the [eval.py](./examples/eval.py) file there, and uncomment the appropriate line in [init](./car_custom_gym_env_package/car_custom_gym_env/__init__.py). Ensure that you have the an Anaconda env on the Raspberry Pi created in the same way as on your own computer and that you have the correct packages installed. You can install the packages in the same way as before, but make sure to also install `RPi.GPIO` (tested using version 0.7.0).
 
 **Common issues/helpful links:**
 
