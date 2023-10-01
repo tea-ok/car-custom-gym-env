@@ -55,3 +55,7 @@ Next, run the [eval.py](./examples/eval.py) file by pressing the play button of 
 ```python
 model = PPO.load("./model_name.zip")
 ```
+
+**Common issues:**
+
+- Problems with installation of `gym==0.19.0`: [Link](https://github.com/openai/gym/issues/3176)
