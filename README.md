@@ -60,4 +60,6 @@ model = PPO.load("./model_name.zip")
 
 **Common issues/helpful links:**
 
+- Installing Anaconda: [Link](https://docs.anaconda.com/free/anaconda/install/index.html)
+- Stable Baselines3 v1.4.0 documentation: [Link](https://stable-baselines3.readthedocs.io/en/v1.4.0/index.html/)
 - Problems with installation of `gym==0.19.0`: [Link](https://github.com/openai/gym/issues/3176)
