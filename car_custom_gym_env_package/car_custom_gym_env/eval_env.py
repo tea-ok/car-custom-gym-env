@@ -10,12 +10,12 @@ import RPi.GPIO as gpio
 
 gpio.setmode(gpio.BCM)
 
-gpio.setup(19, gpio.OUT)
-gpio.setup(26, gpio.OUT)
+gpio.setup(19, gpio.OUT) # Left motor
+gpio.setup(26, gpio.OUT) # Right motor
 
-gpio.setup(16, gpio.IN)
-gpio.setup(20, gpio.IN)
-gpio.setup(21, gpio.IN)
+gpio.setup(16, gpio.IN) # Right sensor
+gpio.setup(20, gpio.IN) # Middle sensor
+gpio.setup(21, gpio.IN) # Left sensor
 
 class CarEnv(gym.Env):
     """
