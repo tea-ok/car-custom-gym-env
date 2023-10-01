@@ -9,7 +9,9 @@ To install this environment, clone the repository and do the following:
 1. Navigate to the root folder with Anaconda Promt (Windows) or Terminal (MacOS/Linux) - this is the folder that contains the `requirements.txt` file.
 2. Create a new conda environment with `conda create --name <env_name> python=3.9.2`
 3. Activate the environment with `conda activate <env_name>`
-4. Install the required packages with `pip install -r requirements.txt`
+4. Run the command `pip install setuptools==65.5.0 pip==21`
+    - You might get an error that you need to run a different command to modify pip, simply copy the command that is given to you and run it.
+5. Install the other required packages with `pip install -r requirements.txt`
 
 ## Usage
 
@@ -56,6 +58,6 @@ Next, run the [eval.py](./examples/eval.py) file by pressing the play button of 
 model = PPO.load("./model_name.zip")
 ```
 
-**Common issues:**
+**Common issues/helpful links:**
 
 - Problems with installation of `gym==0.19.0`: [Link](https://github.com/openai/gym/issues/3176)
